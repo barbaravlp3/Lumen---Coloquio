@@ -1,0 +1,307 @@
+/*Estilos Globales*/
+
+*::after,
+*::before,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 1200px;
+    font-family: 'Lato';
+    color: yellow;
+    background-color: black;
+}
+
+.icon-cart {
+    width: 40px;
+    height: 40px;
+    stroke: yellow;
+
+}
+
+
+
+img {
+    max-width: 100%;
+}
+
+/*Header*/
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0 40px 0;
+}
+
+.container.icon {
+    position: relative;
+}
+
+
+
+#contador-productos {
+    font-size: 12px;
+}
+
+.container-cart-products {
+    position: absolute;
+    top: 50px;
+    right: 0;
+
+    background-color: white;
+    color: black;
+    width: 400px;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    border-radius: 10px;
+}
+
+
+.cart-product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+}
+
+
+
+.info-cart-product {
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+
+
+
+.titulo-producto-carrito {
+    font-size: 20px;
+}
+
+
+
+.precio-producto-carrito {
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+
+.cantidad-producto-carrito {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+
+
+.icon-close {
+    width: 25px;
+    height: 25px;
+
+}
+
+.icon-close:hover {
+    stroke: red;
+    cursor: pointer;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.cart-total h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.total-pagar {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.hidden-cart {
+    display: none;
+}
+
+/*Main*/
+.container-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.item {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.item:hover {
+    box-shadow: 0 10px 20px rgba(132, 129, 129, 0.994);
+}
+
+.item-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 10px 10px 0 0;
+    transition: all .5s;
+}
+
+.item figure {
+    overflow: hidden;
+}
+
+.item:hover img {
+    transform: scale(1.2);
+}
+
+.info-product {
+    padding: 15px 30px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 900;
+
+}
+
+.info-product button {
+    font-size: 19px;
+    border: none;
+    background: none;
+    background-color: greenyellow;
+    color: black;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.cart-empty {
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+.btn-comprar {
+    font-size: 20px;
+    background-color: greenyellow;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.btn-comprar:hover {
+    color: lightcoral;
+}
+
+.mi-enlace {
+    text-decoration: none;
+    list-style: none;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: yellow;
+    gap: 15px;
+    display: flex;
+}
+
+.mi-enlace:hover {
+    color: lightcoral;
+}
+
+/*Login*/
+
+.login-container {
+    width: 350px;
+    margin: 100px auto;
+    padding: 30px;
+    color: black;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5cb85c;
+    border: none;
+    color: black;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: yellow;
+}
+
+#error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+
+.notificacion {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 9999;
+}
