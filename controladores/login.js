@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
    try {
       const response = await fetch(
-        "/julia-rodriguez/barbaravolpe/tp_coloquio/api/login.php",
+        "/barbaravolpe/tp_coloquio/api/login.php",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

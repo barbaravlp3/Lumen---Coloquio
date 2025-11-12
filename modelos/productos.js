@@ -1,4 +1,4 @@
-const URL = "/julia-rodriguez/barbaravolpe/tp_coloquio/api/productos.php";
+const URL = "/barbaravolpe/tp_coloquio/api/productos.php";
 
 /**
  * Selecciona todos los productos

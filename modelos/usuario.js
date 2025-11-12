@@ -1,5 +1,5 @@
 
-const URL = "/julia-rodriguez/barbaravolpe/tp_coloquio/api/usuario.php";
+const URL = "/barbaravolpe/tp_coloquio/api/usuario.php";
 
 /**
  * Selecciona todos los usuarios
