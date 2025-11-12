@@ -1,37 +1,58 @@
-  import { insertarUsuarios } from "../modelos/usuario.js";
+import { insertarUsuarios } from "../modelos/usuario.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const registerModal = document.getElementById('register-modal');
   const registerBtn = document.getElementById('register-btn');
   const closeBtn = document.getElementById('close-register');
   const form = document.getElementById("form-register");
+  const linkBack = document.getElementById('link-back-login');
+  const loginModal = document.getElementById('login-modal');
 
   if (!registerModal || !registerBtn || !closeBtn || !form) {
     console.warn("Elementos del registro no encontrados en el DOM.");
     return;
   }
 
-  // Mostrar el modal
+  // === Mostrar modal de registro ===
   registerBtn.addEventListener('click', () => {
     registerModal.classList.remove('hidden');
+    loginModal?.classList.add('hidden');
+    document.body.classList.add('modal-open');
   });
 
-  // Cerrar el modal
+  // === Cerrar modal de registro ===
   closeBtn.addEventListener('click', () => {
     registerModal.classList.add('hidden');
+    document.body.classList.remove('modal-open');
   });
 
-  // Cerrar haciendo clic fuera del modal
+  // === Cerrar haciendo clic fuera del contenido ===
   window.addEventListener('click', (e) => {
     if (e.target === registerModal) {
       registerModal.classList.add('hidden');
+      document.body.classList.remove('modal-open');
     }
   });
 
-  // Evento de envío del formulario
+  // === Volver al login ===
+  if (linkBack) {
+    linkBack.addEventListener('click', (e) => {
+      e.preventDefault(); // evita el salto del href="#"
+      registerModal.classList.add('hidden');
+      loginModal?.classList.remove('hidden');
+      document.body.classList.add('modal-open');
+
+      // Enfocar el primer campo del login (accesibilidad)
+      const firstInput = loginModal?.querySelector('input, button, select');
+      firstInput?.focus();
+    });
+  }
+
+  // === Evento de envío del formulario ===
   form.addEventListener("submit", registerUser);
 });
 
+// === Función de registro ===
 export async function registerUser(event) {
   event.preventDefault();
 
@@ -63,7 +84,8 @@ export async function registerUser(event) {
     if (resultado.success) {
       alert("Usuario registrado correctamente");
       document.getElementById('register-modal').classList.add('hidden');
-      event.target.reset(); // Limpia el formulario
+      document.body.classList.remove('modal-open');
+      event.target.reset(); // limpia el formulario
     } else {
       alert("Error al registrar usuario: " + (resultado.message || ""));
     }
