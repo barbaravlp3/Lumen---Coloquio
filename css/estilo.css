@@ -325,10 +325,8 @@ header {
   backdrop-filter: blur(4px); /* Efecto desenfoque opcional */
 }
 
-/* Oculta los modales cuando están inactivos */
-.hidden {
-  display: none !important;
-}
+
+
 
 /* Contenido del modal */
 .modal-content {
